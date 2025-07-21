@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Test giọng nói</title>
+</head>
+<body>
+  <textarea id="textInput" rows="4" cols="50" placeholder="Nói những gì bạn nghĩ..."></textarea><br>
+  <button onclick="startListening()">🎙️ Nói</button>
+  <button onclick="postMessage()">Đăng</button>
+
+  <script>
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const recognition = new SpeechRecognition();
+
+    recognition.lang = 'vi-VN';
+    recognition.continuous = false;
+    recognition.interimResults = false;
+
+    recognition.onstart = () => {
+      console.log("🎤 Đang lắng nghe...");
+    };
+
+    recognition.onresult = function (event) {
+      const transcript = event.results[0][0].transcript;
+      console.log("✅ Nhận được:", transcript);
+      document.getElementById('textInput').value = transcript;
+
+      if (transcript.includes("đổi giao diện")) {
+        document.body.style.backgroundColor = "yellow";
+        console.log("🎨 Đã đổi giao diện sang nền vàng");
+      }
+       else if (transcript.includes("reset")) {
+        document.body.style.backgroundColor = "white"; // hoặc "#fff"
+        document.getElementById('textInput').value = "";
+        console.log("🔁 Đã reset về mặc định");
+    }
+    };
+
+    recognition.onerror = function (event) {
+      console.error('❌ Lỗi:', event.error);
+      alert('Lỗi: ' + event.error);
+    };
+
+    recognition.onspeechend = () => {
+      console.log("🛑 Kết thúc nói.");
+    };
+    
+    recognition.onspeechend = () => {
+    console.log("🛑 Kết thúc nói. Đang lắng nghe lại...");
+    recognition.stop(); // luôn dừng trước
+    setTimeout(() => recognition.start(), 500); // rồi khởi động lại
+    };
+
+    function startListening() {
+      recognition.start();
+    }
+
+    function postMessage() {
+      const content = document.getElementById('textInput').value;
+      alert("Nội dung bạn vừa đăng: " + content);
+    }
+  </script>
+</body>
+</html>

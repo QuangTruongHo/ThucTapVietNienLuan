@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceNet</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <aside class="sidebar-left">
+              <div class="logo">
+                <img src="img/logo.png" style="width: 50px; border-radius: 40px;" alt="">
+                <h2>VoiceNet</h2>
+              </div>
+              <div class="list-menu">
+                <ul>
+                    <li><img src="img/avatar.png" style="width:40px; border-radius: 40px;" alt=""> My Name</li>
+                    <li><i class="fa-solid fa-gear"></i> Cài đặt</li>
+                    <li><input type="checkbox" id="darkModeToggle"> Giao diện tối</li>
+                    <li>
+                        <select>
+                          <option value="vi">🇻🇳 Tiếng Việt</option>
+                          <option value="en">🇺🇸 English</option>
+                        </select>
+                    </li>
+                    <li><i class="fa-solid fa-circle-info"></i> Thông tin</li>
+                </ul>
+              </div>
+        </aside>
+
+        <main class="main-content">
+              <div class="main-header">
+                <img src="img/avatar.png" style="width:40px; border-radius: 40px;" alt="">
+                <textarea name="" id=""> Nói những gì bạn nghĩ </textarea>
+                <button id="micButton" onclick="toggleMic()">
+                  🎤 Bật micro
+                </button>
+              </div>
+              <div class="post">
+                <div class="post-header">
+                  <img src="img/avatar.png" style="width:40px; border-radius: 40px;" alt="">
+                  <div class="user-infor">
+                    <strong>Nguyễn Văn A</strong>
+                    <span>2 phút trước</span>
+                  </div>
+                </div>
+
+                <div class="post-content">
+                  <div class="post-text">
+                    Hôm nay trời thật đẹp.
+                  </div>
+
+                  <div class="post-img">
+                    <img src="img/post.jpg" style="width: 100%; height: auto;" alt="">
+                    
+                  </div>
+                </div>
+
+                <div class="post-footer">
+                  <button id="likeButton" class="like-btn"> <i class="fa-regular fa-heart"></i> Thích</button>
+                  <button class="comment-btn"> <i class="fa-regular fa-comment"></i> Bình luận</button>
+                </div>
+                
+                  <div class="comment-section" style="display: none;">
+                    <div class="comments-list">
+                      <!-- Danh sách bình luận -->
+                      <p class="comment-item">Người A: Rất hay!</p>
+                      <p class="comment-item">Người B: 👍</p>
+                    </div>
+
+                    <!-- Form nhập bình luận -->
+                    <div class="comment-form">
+                      <input type="text" class="comment-input" placeholder="Nói bình luận của bạn...">
+                      <button class="submit-comment">Gửi</button>
+                    </div>
+                  </div>
+              </div>
+                
+              <div class="post">
+                <div class="post-header">
+                  <img src="img/avatar.png" style="width:40px; border-radius: 40px;" alt="">
+                  <div class="user-infor">
+                    <strong>Nguyễn Văn A</strong>
+                    <span>2 phút trước</span>
+                  </div>
+                </div>
+
+                <div class="post-content">
+                  <div class="post-text">
+                    Hôm nay trời thật đẹp.
+                  </div>
+
+                  <div class="post-img">
+                    <img src="img/post.jpg" style="width: 100%; height: auto;" alt="">
+      
+                  </div>
+                </div>
+
+                <div class="post-footer">
+                  <button class="like-btn"> <i class="fa-regular fa-heart"></i> Thích</button>
+                  <button class="comment-btn"> <i class="fa-regular fa-comment"></i> Bình luận</button>
+                </div>
+
+                <div class="comment-section" style="display: none;">
+                    <div class="comments-list">
+                      <!-- Danh sách bình luận -->
+                      <p class="comment-item">Người A: Rất hay!</p>
+                      <p class="comment-item">Người B: 👍</p>
+                    </div>
+
+                    <!-- Form nhập bình luận -->
+                    <div class="comment-form">
+                      <input type="text" class="comment-input" placeholder="Nói bình luận của bạn...">
+                      <button class="submit-comment">Gửi</button>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="post">
+                <div class="post-header">
+                  <img src="img/avatar.png" style="width:40px; border-radius: 40px;" alt="">
+                  <div class="user-infor">
+                    <strong>Nguyễn Văn A</strong>
+                    <span>2 phút trước</span>
+                  </div>
+                </div>
+
+                <div class="post-content">
+                  <div class="post-text">
+                    Hôm nay trời thật đẹp.
+                  </div>
+
+                  <div class="post-img">
+                    <!-- <img src="img/post.jpg" style="width: 100%; height: auto;" alt=""> -->
+                  </div>
+                </div>
+
+                <div class="post-footer">
+                  <button class="like-btn"> <i class="fa-regular fa-heart"></i> Thích</button>
+                  <button class="comment-btn"> <i class="fa-regular fa-comment"></i> Bình luận</button>
+                </div>
+
+                <div class="comment-section" style="display: none;">
+                    <div class="comments-list">
+                      <!-- Danh sách bình luận -->
+                      <p class="comment-item">Người A: Rất hay!</p>
+                      <p class="comment-item">Người B: 👍</p>
+                    </div>
+
+                    <!-- Form nhập bình luận -->
+                    <div class="comment-form">
+                      <input type="text" class="comment-input" placeholder="Nói bình luận của bạn...">
+                      <button class="submit-comment">Gửi</button>
+                    </div>
+                  </div>
+              </div>
+        </main>
+
+        <aside class="sidebar-right">
+
+        </aside>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
