@@ -13,14 +13,16 @@
     <aside class="sidebar-left">
       <div class="logo">
         <img src="img/logo.png" style="width: 50px; border-radius: 40px;" alt="">
-        <h2>VoiceNet</h2>
+        <h2>VoiceNet</h2> 
       </div>
       <div class="list-menu">
         <ul>
           <li><img src="img/avatar.png" style="width:40px; border-radius: 40px;" alt=""> My Name</li>
           <button id="micButton" onclick="toggleMic()">🎤 Bật micro</button>
           <li><i class="fa-solid fa-gear"></i> Cài đặt</li>
-          <li><input type="checkbox" id="darkModeToggle"> Giao diện tối</li>
+          <li>
+            <input type="checkbox" id="themeToggle" />
+            <label for="themeToggle">Đổi giao diện</label></li>
           <li>
             <select>
               <option value="vi">🇻🇳 Tiếng Việt</option>
@@ -34,110 +36,111 @@
 
     <main class="main-content">
       <div class="post">
+
+        <!-- Lặp 3 lần video post -->
         <div class="post-video">
-          <video controls autoplay loop muted>
-            <source src="video/sample1.mp4" type="video/mp4">
+          <video preload="metadata" loop muted>
+            <source src="img/Download.mp4" type="video/mp4">
             Trình duyệt không hỗ trợ video.
           </video>
-
-          <!-- Nút hành động nổi bên phải -->
           <div class="video-actions">
             <img src="img/avatar.png" class="action-avatar">
+            <button class="follow-btn">+</button>
             <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
             <button class="comment-btn"><i class="fa-regular fa-comment"></i></button>
           </div>
 
           <div class="comment-overlay">
-          <div class="overlay-content">
-            <div class="overlay-header">
-              <h3>Bình luận</h3>
-              <span class="close-overlay">&times;</span>
-            </div>
-            <div class="comments-list">
-              <p><strong>Người A:</strong> Video quá hay!</p>
-              <p><strong>Người B:</strong> 👍👍👍</p>
-            </div>
-            <div class="comment-form">
-              <input type="text" placeholder="Viết bình luận..." />
-              <button>Gửi</button>
+            <div class="overlay-content">
+              <div class="overlay-header">
+                <h3>Bình luận</h3>
+                <span class="close-overlay">&times;</span>
+              </div>
+              <div class="comments-list">
+                <p><strong>Người A:</strong> Video quá hay!</p>
+                <p><strong>Người B:</strong> 👍👍👍</p>
+              </div>
+              <div class="comment-form">
+                <input type="text" class="comment-input" placeholder="Viết bình luận..." />
+                <button class="send-btn">Gửi</button>
+              </div>
             </div>
           </div>
         </div>
-          
-        </div>
 
-         <div class="post-video">
-          <video controls autoplay loop muted>
-            <source src="video/sample1.mp4" type="video/mp4">
+        <!-- Clone post-video for more videos -->
+        <div class="post-video">
+          <video preload="metadata" loop muted>
+            <source src="img/Download (1).mp4" type="video/mp4">
             Trình duyệt không hỗ trợ video.
           </video>
 
-          <!-- Nút hành động nổi bên phải -->
           <div class="video-actions">
             <img src="img/avatar.png" class="action-avatar">
+            <button class="follow-btn">+</button>
             <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
             <button class="comment-btn"><i class="fa-regular fa-comment"></i></button>
           </div>
 
           <div class="comment-overlay">
-          <div class="overlay-content">
-            <div class="overlay-header">
-              <h3>Bình luận</h3>
-              <span class="close-overlay">&times;</span>
-            </div>
-            <div class="comments-list">
-              <p><strong>Người A:</strong> Video quá hay!</p>
-              <p><strong>Người B:</strong> 👍👍👍</p>
-            </div>
-            <div class="comment-form">
-              <input type="text" placeholder="Viết bình luận..." />
-              <button>Gửi</button>
+            <div class="overlay-content">
+              <div class="overlay-header">
+                <h3>Bình luận</h3>
+                <span class="close-overlay">&times;</span>
+              </div>
+              <div class="comments-list">
+                <p><strong>Người A:</strong> Video quá hay!</p>
+                <p><strong>Người B:</strong> 👍👍👍</p>
+              </div>
+              <div class="comment-form">
+                <input type="text" class="comment-input" placeholder="Viết bình luận..." />
+                <button class="send-btn">Gửi</button>
+              </div>
             </div>
           </div>
         </div>
-          
-        </div>
 
-         <div class="post-video">
-          <video controls autoplay loop muted>
-            <source src="video/sample1.mp4" type="video/mp4">
+        <!-- Third video post -->
+        <div class="post-video">
+          <video preload="metadata" loop muted>
+            <source src="img/Download.mp4" type="video/mp4">
             Trình duyệt không hỗ trợ video.
           </video>
 
-          <!-- Nút hành động nổi bên phải -->
           <div class="video-actions">
             <img src="img/avatar.png" class="action-avatar">
+            <button class="follow-btn">+</button>
             <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
             <button class="comment-btn"><i class="fa-regular fa-comment"></i></button>
           </div>
 
           <div class="comment-overlay">
-          <div class="overlay-content">
-            <div class="overlay-header">
-              <h3>Bình luận</h3>
-              <span class="close-overlay">&times;</span>
-            </div>
-            <div class="comments-list">
-              <p><strong>Người A:</strong> Video quá hay!</p>
-              <p><strong>Người B:</strong> 👍👍👍</p>
-            </div>
-            <div class="comment-form">
-              <input type="text" placeholder="Viết bình luận..." />
-              <button>Gửi</button>
+            <div class="overlay-content">
+              <div class="overlay-header">
+                <h3>Bình luận</h3>
+                <span class="close-overlay">&times;</span>
+              </div>
+              <div class="comments-list">
+                <p><strong>Người A:</strong> Video quá hay!</p>
+                <p><strong>Người B:</strong> 👍👍👍</p>
+              </div>
+              <div class="comment-form">
+                <input type="text" class="comment-input" placeholder="Viết bình luận..." />
+                <button class="send-btn">Gửi</button>
+              </div>
             </div>
           </div>
-        </div>
-          
         </div>
 
       </div>
     </main>
 
     <aside class="sidebar-right">
-      <!-- Rỗng -->
+       <div id="voiceLog">Chưa có lệnh</div>
     </aside>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
