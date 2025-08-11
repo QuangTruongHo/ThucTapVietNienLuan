@@ -1,3 +1,4 @@
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +12,7 @@ body, html {
   scroll-behavior: smooth;
 }
 
+/* ===== CONTAINER ===== */
 .container {
   display: flex;
   height: 100vh;
@@ -152,6 +154,28 @@ body, html {
   color: #fff;
 }
 
+.follow-btn {
+  position: absolute;
+  bottom: 90px;
+  left: 8px;
+  font-size: 18px;
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.follow-btn.following {
+  background-color: green;
+  content: "✓";
+}
+
+
+
 /* ===== COMMENT OVERLAY ===== */
 .comment-overlay {
   display: none;
@@ -215,4 +239,76 @@ body, html {
 
 .comment-form button:hover {
   background-color: #0056b3;
+}
+
+/* ===== DARK MODE ===== */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark-mode .sidebar-left,
+body.dark-mode .main-content {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+body.dark-mode .sidebar-left .logo h2,
+body.dark-mode .sidebar-left .list-menu ul li {
+  color: white;
+}
+
+body.dark-mode .sidebar-left .list-menu ul li:hover {
+  background-color: #2c2c2c;
+}
+
+body.dark-mode .sidebar-left .list-menu button#micButton {
+  background-color: #d63031;
+}
+
+body.dark-mode .sidebar-left .list-menu button#micButton:hover {
+  background-color: #c0392b;
+}
+
+body.dark-mode .comment-overlay {
+  background-color: rgba(30, 30, 30, 0.98);
+  color: white;
+}
+
+body.dark-mode .comment-form input {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+body.dark-mode .comment-form button {
+  background-color: #555;
+  color: white;
+}
+
+body.dark-mode .comment-form button:hover {
+  background-color: #777;
+}
+
+body.dark-mode select,
+body.dark-mode input[type="checkbox"] {
+  background-color: #444;
+  color: white;
+  border: 1px solid #666;
+}
+
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+#voiceLog {
+  padding: 5px 10px;
+  background: #444;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #fff;
+  min-width: 150px;
+  text-align: center;
 }
