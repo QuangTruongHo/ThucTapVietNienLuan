@@ -19,6 +19,37 @@ body, html {
   width: 100%;
 }
 
+/* ===== SEARCH BAR ===== */
+.search-bar {
+  position: relative;
+  width: 50%;                /* bằng 1 nửa sidebar */
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px 35px 8px 12px;   /* chừa khoảng bên phải cho icon */
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-bar button {
+  position: absolute;
+  right: 10px;                 /* nằm trong ô input */
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #666;
+}
+
+.search-bar button:hover {
+  color: #000;
+}
+
 /* ===== SIDEBAR LEFT ===== */
 .sidebar-left {
   width: 35%;
@@ -74,11 +105,11 @@ body, html {
   border: none;
   padding: 10px 16px;
   font-size: 17px;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
   white-space: nowrap;
   align-self: flex-start;
-  width: auto;
+  width: 50% ;
   min-width: fit-content;
   max-width: 60%;
   transition: background-color 0.3s ease;
@@ -247,6 +278,20 @@ body.dark-mode {
   color: white;
 }
 
+body.dark-mode .search-bar input {
+  background: #2c2c2c;
+  border: 1px solid #555;
+  color: white;
+}
+
+body.dark-mode .search-bar button {
+  color: #ccc;
+}
+
+body.dark-mode .search-bar button:hover {
+  color: white;
+}
+
 body.dark-mode .sidebar-left,
 body.dark-mode .main-content {
   background-color: #1e1e1e;
@@ -312,3 +357,4 @@ body.dark-mode input[type="checkbox"] {
   min-width: 150px;
   text-align: center;
 }
+
