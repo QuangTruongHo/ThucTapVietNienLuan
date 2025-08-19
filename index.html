@@ -12,27 +12,27 @@
   <div class="container">
     <aside class="sidebar-left">
       <div class="logo">
-        <img src="img/logo.png" style="width: 50px; border-radius: 40px;" alt="">
+        <img src="img/logo.png" style="width: 50px; border-radius: 40px;" alt="" class="logo-img">
         <h2>VoiceNet</h2> 
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Tìm kiếm...">
+        <button><i class="fa fa-search"></i></button>
       </div>
       <div class="list-menu">
         <ul>
-          <li><img src="img/avatar.png" style="width:40px; border-radius: 40px;" alt=""> My Name</li>
-          <button id="micButton" onclick="toggleMic()">🎤 Bật micro</button>
+          <li><img src="img/avatar.png" style="width: 30px; border-radius: 40px;" alt="" class="avatar"> My Name</li>
           <li><i class="fa-solid fa-gear"></i> Cài đặt</li>
           <li>
             <input type="checkbox" id="themeToggle" />
-            <label for="themeToggle">Đổi giao diện</label></li>
-          <li>
-            <select>
-              <option value="vi">🇻🇳 Tiếng Việt</option>
-              <option value="en">🇺🇸 English</option>
-            </select>
+            <label for="themeToggle">Đổi giao diện</label>
           </li>
           <li><i class="fa-solid fa-circle-info"></i> Thông tin</li>
+          <button id="micButton" onclick="toggleMic()">🎤 Bật micro</button>
         </ul>
       </div>
     </aside>
+
 
     <main class="main-content">
       <div class="post">
