@@ -1,6 +1,7 @@
 let recognition;
 let isMicOn = false;
 let isPaused = false; // true = tạm dừng xử lý lệnh
+let isCommenting = false; // true = đang nhập bình luận
 
 let videos;
 let currentIndex = 0;
@@ -155,7 +156,7 @@ function initRecognition() {
         console.log("⏸ Mic đang tạm dừng, bỏ qua:", transcript);
       }
     } else {
-      if (transcript.includes("tạm dừng nghe")) {
+      if (transcript.includes("dừng nghe")) {
         isPaused = true;
         document.getElementById("micButton").textContent = "⏸ Tạm dừng";
         console.log("⏸ Đã tạm dừng nhận lệnh");
@@ -194,6 +195,23 @@ function toggleMic() {
 
 // -------------------- XỬ LÝ LỆNH --------------------
 function handleVoiceCommand(command) {
+  // Nếu đang trong chế độ nhập bình luận
+  if (isCommenting) {
+    if (command.includes("gửi")) {
+      clickSendButton();
+      isCommenting = false;
+      console.log("✅ Gửi bình luận & thoát chế độ nhập");
+    } else if (command.includes("xóa")) {
+      clearCommentInput();
+      console.log("🗑️ Xóa bình luận");
+    } else {
+      insertCommentText(command); // nối thêm nội dung
+      console.log("✍️ Thêm nội dung:", command);
+    }
+    return; // không xử lý các lệnh khác khi đang nhập
+  }
+
+  // --- Các lệnh khác ---
   if (command.includes("thích") && !command.includes("bỏ")) {
     clickLike();
   } else if (command.includes("bỏ thích")) {
@@ -210,13 +228,11 @@ function handleVoiceCommand(command) {
     scrollToPrevVideo();
   } else if (command.includes("nhập bình luận")) {
     focusCommentInput();
-  } else if (command.includes("gửi")) {
-    clickSendButton();
-  } else if (command.startsWith("viết ")) {
-    const content = command.replace("viết ", "").trim();
-    insertCommentText(content);
-  } else if (command.includes("xóa")) {
+  } else if (command.includes("viết")) {
+    focusCommentInput();
+    isCommenting = true;
     clearCommentInput();
+    console.log("📝 Bật chế độ nhập bình luận");
   } else if (command.includes("đổi giao diện")) {
     toggleDarkMode();
   } else if (command.includes("dừng")) { 
@@ -300,7 +316,11 @@ function insertCommentText(text) {
   const input = post.querySelector(".comment-form input");
   if (input) {
     focusCommentInput();
-    input.value = text;
+    if (input.value !== "") {
+      input.value += " " + text;
+    } else {
+      input.value = text;
+    }
   }
 }
 
