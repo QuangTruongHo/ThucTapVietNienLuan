@@ -201,7 +201,7 @@ function handleVoiceCommand(command) {
       clickSendButton();
       isCommenting = false;
       console.log("✅ Gửi bình luận & thoát chế độ nhập");
-    } else if (command.includes("xoá")) {
+    } else if (command.includes("xóa","xoá")) {
       clearCommentInput();
       console.log("🗑️ Xóa bình luận");
     } else {
