@@ -201,7 +201,7 @@ function handleVoiceCommand(command) {
       clickSendButton();
       isCommenting = false;
       console.log("✅ Gửi bình luận & thoát chế độ nhập");
-    } else if (command.includes("xóa")) {
+    } else if (command.includes("xoá")) {
       clearCommentInput();
       console.log("🗑️ Xóa bình luận");
     } else {
@@ -235,7 +235,7 @@ function handleVoiceCommand(command) {
     console.log("📝 Bật chế độ nhập bình luận");
   } else if (command.includes("đổi giao diện")) {
     toggleDarkMode();
-  } else if (command.includes("dừng")) { 
+  } else if (command.includes("tạm dừng")) { 
     const video = getCurrentVideo();
     if (video && !video.paused) {
       video.pause();
